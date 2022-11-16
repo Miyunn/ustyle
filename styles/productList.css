@@ -1,14 +1,13 @@
-
 .GridImg {
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  padding: 5px;
-  width: 250px;
-}
-
-.column {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    height: 150px;
+  }
+  
+  .column {
   float: left;
-  width: 45%;
+  width: 50%;
   padding: 10px;
 }
 

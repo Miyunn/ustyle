@@ -1,0 +1,108 @@
+<?php session_start();
+require("../../admin/database/feedBackClass.php");
+?>
+
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Contact</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../css/layout.css">
+<link rel="stylesheet" href="../css/contact.css">
+</head>
+	
+<body>
+	
+		<!-- Navigation -->
+	<header>
+		
+		<img id="webLogo" src ="../images/logo.png" alt="uStyle">
+		
+		<nav>
+			
+			<ul class="navUl">
+				<li><a class="navigation" href="../index.pgp">Home</a></li>
+				<li><a class="navigation" href="products.html">Products</a></li>
+				<li><a class="navigation" href="about.html">About</a></li>
+				<li><a class="activeNavigation" href="#">Contact</a></li>
+			</ul>
+				
+		</nav>	 
+		
+		<img id="shopIcon" src="../images/shopIcon.png" alt="Cart">
+		
+	</header>
+	
+	<!-- /Navigation -->
+	
+
+	<h1>Contact Us</h1>
+	
+	<ul id="contactDetails">
+		<li>Phone : +9477985413</li>
+		<li>Email : contact@ustyle.com</li>
+	</ul>
+	
+	<p>Use the form below to give us your feedback</p>
+
+	<div id="contactForm">
+		
+		<form name="contact" onSubmit="return validateForm()" method="post">
+           First Name*<br>
+            <input type="text" id="fName" name="fName"  placeholder="Your First name"><br>
+          
+                
+            Last Name<br>
+            <input type="text" name="lName" id="lName" placeholder="Your Last name"><br>
+        
+            
+            Email*<br>
+            <input type="text" id="email" name="email" placeholder="Your E-mail Address"><br>
+			
+			Contact Number<br>
+            <input type="text" id="contact" name="contact" placeholder="0711234567" pattern="[0-9]{10}"><br>
+            
+            
+            Feedback*<br>
+            <textarea id="feedback" name="feedback" placeholder="Give us your feedback" style="height:250px"></textarea><br>
+          
+            <input type="submit" name = "sbmt" value="Send">
+			
+		</form>
+
+		<?php
+	if(isset($_POST["sbmt"]))
+	{
+		$feedback = new feed;
+		$feedback->setFirstName($_POST['fName']);
+		$feedback->setLastName($_POST['lName']);
+		$feedback->setEmail($_POST['email']);
+		$feedback->setContact($_POST['contact']);
+		$feedback->setFeedback($_POST['feedback']);
+		
+		$feedback->AddFeedback();
+	}
+	?>
+
+	</div>
+	
+	<!-- Footer -->
+	<footer>
+
+			<div class="footerNav">
+
+				<p class="footerLinks">
+					<a class="link-1" href="../index.html">Home</a>
+					|
+					<a class="link-1" href="sitemap.html">Sitemap</a>
+				</p>
+
+				<p>uStyles&copy; 2020 | Designed by Kavinthe Perera</p>
+			</div>
+
+	</footer>
+	<!-- /Footer -->
+	<script src="../scripts/form.js"></script>
+</body>
+</html>
