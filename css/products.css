@@ -1,0 +1,52 @@
+@charset "utf-8";
+
+h1{
+	text-align: center;
+	margin-top: 30px;
+}
+
+#mens{
+	max-width: 80%;
+	margin-top: 45px;
+	margin-bottom: 45px;
+	margin-left: 10%;
+	margin-right: 10%;
+	transition-duration: 0.5s;
+}
+
+#womens{
+	max-width: 80%;
+	margin-bottom: 45px;
+	margin-left: 10%;
+	margin-right: 10%;
+	transition-duration: 0.5s;
+}
+
+#mens:hover{
+	max-width: 82%;
+	margin-left: 8%;
+	margin-right: 8%;
+}
+
+#womens:hover{
+	max-width: 82%;
+	margin-left: 8%;
+	margin-right: 8%;
+}
+
+@media only screen and (max-width: 600px) {
+	
+	#mens{
+		margin-left: 2%;
+		margin-right: 2%;
+		max-width: 96%;
+	}
+	
+	#womens{
+		margin-left: 2%;
+		margin-right: 2%;
+		max-width: 96%;
+	}
+	
+}
+
